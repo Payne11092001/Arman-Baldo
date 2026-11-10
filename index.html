@@ -1,475 +1,277 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Arman Baldo — IT Specialist & Web Developer based in Manila, Philippines">
-<title>Arman Baldo — IT Specialist | Web Developer</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
-<link href="packages/css/style.css" rel="stylesheet">
-<style>
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Arman Baldo is an IT specialist and web developer based in Manila, Philippines. Explore selected work, experience, and services.">
+  <meta name="theme-color" content="#111110">
+  <title>Arman Baldo — IT Specialist &amp; Web Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="packages/css/style.css" rel="stylesheet">
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-<!-- Loading Screen -->
-<div id="loader">
-  <div class="loader-ring"></div>
-  <div class="loader-text">Loading Portfolio</div>
-</div>
-
-<!-- Custom Cursor -->
-<div id="cursor"></div>
-<div id="cursor-ring"></div>
-
-<!-- Particle Canvas -->
-<canvas id="particles"></canvas>
-
-<!-- Navigation -->
-<nav>
-  <div class="logo">AB</div>
-  <ul class="nav-links">
-    <li><a href="#about">About</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#pricing">Pricing</a></li>
-    <li><a href="#experience">Experience</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-  <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Hire Me</button>
-</nav>
-
-<!-- HERO -->
-<section id="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-content">
-    <div class="hero-left">
-      <div class="hero-eyebrow">Available for work</div>
-      <h1 class="hero-name">ARMAN<br>BALDO</h1>
-      <div class="hero-title">
-        <span class="typing-text" id="typing"></span><span class="cursor-blink" style="color:var(--neon)">|</span>
-      </div>
-      <p class="hero-desc">Inspired career-minded individual combining technical expertise and creative skills to drive organizational excellence. Based in Manila, Philippines.</p>
-      <div class="hero-cta">
-        <button class="btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Let's Connect</button>
-       <button class="btn-outline" onclick="window.open('arman_cv.pdf','_blank')">
-            View Resume ↗
-        </button>
-      </div>
+  <header class="site-header">
+    <a class="wordmark" href="#home" aria-label="Arman Baldo, home">ARMAN<span>®</span></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation">
+      <span class="menu-toggle-label">Menu</span>
+      <span class="menu-toggle-icon" aria-hidden="true"><i></i><i></i></span>
+    </button>
+    <nav class="primary-navigation" id="primary-navigation" aria-label="Main navigation">
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <button class="motion-toggle" type="button" aria-pressed="true" aria-label="Turn motion effects off">
+        <span class="motion-icon" aria-hidden="true">Ⅱ</span>
+        <span class="motion-label">Motion on</span>
+      </button>
+      <a class="header-cta" href="#contact">Let’s talk <span aria-hidden="true">↗</span></a>
     </div>
-    <div class="hero-right">
-      <div class="float-card fc1"><span class="dot" style="background:var(--neon)"></span>Web Development</div>
-      <div class="float-card fc2"><span class="dot" style="background:var(--purple)"></span>Networking</div>
-      <div class="float-card fc3"><span class="dot" style="background:#f59e0b"></span>Technical Support</div>
-      <div class="float-card fc4"><span class="dot" style="background:#ec4899"></span>Graphic Design</div>
-      <div class="portrait-container">
-        <div class="portrait-glow"></div>
+  </header>
 
-        <!--
-          ═══════════════════════════════════════════════
-          HOW TO ADD YOUR REAL PHOTOS:
-          1. Place your casual photo as:  casual.jpg
-          2. Place your formal photo as:  formal.jpg
-          3. Update the src attributes below.
-          The WebGL water shader will handle everything else.
-          ═══════════════════════════════════════════════
-        -->
-        <img id="img-casual" src="packages/image/casual.jpg"
-             alt="Arman Baldo casual"
-             crossorigin="anonymous">
-        <img id="img-formal" src="packages/image/formal.jpg"
-             alt="Arman Baldo formal"
-             crossorigin="anonymous">
-
-        <div class="portrait-badge" id="portrait-badge">Casual Mode</div>
-        <canvas id="water-canvas" width="340" height="420"></canvas>
-        <div class="portrait-hint">
-          <span></span> Hover for water effect <span></span>
+  <main id="main">
+    <section class="hero page-wrap" id="home" aria-labelledby="hero-title">
+      <div class="hero-topline">
+        <span>Independent portfolio <span class="red-dot" aria-hidden="true"></span> Manila, Philippines</span>
+        <span>IT specialist · Web developer · Creative</span>
+      </div>
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="eyebrow-line"></span> Available for opportunities</p>
+          <h1 id="hero-title" aria-label="Arman Baldo"><span class="hero-name-line">ARMAN</span><span class="hero-name-line">BALDO</span></h1>
+          <p class="hero-intro">I bring technology and creativity together to make work that is useful, thoughtful, and built to last.</p>
+          <div class="hero-links">
+            <a class="button button-primary" href="#work">Explore my work <span aria-hidden="true">↘</span></a>
+            <a class="text-link" href="arman_cv.pdf" target="_blank" rel="noopener">View résumé <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+        <div class="hero-portrait">
+          <div class="portrait-frame">
+            <img src="packages/image/portrait-cutout.png" alt="Arman Baldo in a black shirt" fetchpriority="high">
+            <span class="portrait-caption">Arman Baldo <span>·</span> IT &amp; web</span>
+          </div>
+          <span class="portrait-note">PH<br>14°35′N</span>
+          <span class="portrait-stamp" aria-hidden="true">AB</span>
         </div>
       </div>
-    </div>
-  </div>
-</section>
+      <div class="hero-bottomline">
+        <span>Scroll to discover</span>
+        <span class="scroll-mark" aria-hidden="true"></span>
+        <span>Portfolio / 2026</span>
+      </div>
+    </section>
 
-<!-- Stats Strip -->
-<div class="stats-strip">
-  <div class="stat-item">
-    <span class="stat-num" data-count="1">0</span>
-    <span class="stat-label">Year Experience</span>
-  </div>
-  <div class="stat-item">
-    <span class="stat-num" data-count="3">0</span>
-    <span class="stat-label">Projects Built</span>
-  </div>
-  <div class="stat-item">
-    <span class="stat-num" data-count="6">0</span>
-    <span class="stat-label">Core Skills</span>
-  </div>
-  <div class="stat-item">
-    <span class="stat-num" data-count="100">0</span>
-    <span class="stat-label">% Committed</span>
-  </div>
-</div>
+    <section class="quick-facts" aria-label="At a glance">
+      <div class="fact"><span class="fact-label">01 / Focus</span><span>IT &amp; web development</span></div>
+      <div class="fact"><span class="fact-label">02 / Based in</span><span>Manila, Philippines</span></div>
+      <div class="fact"><span class="fact-label">03 / Status</span><span><span class="status-dot"></span> Open to work</span></div>
+    </section>
 
-<!-- ABOUT -->
-<section id="about">
-  <div style="max-width:1100px;margin:0 auto">
-    <div class="section-header reveal">
-      <span class="section-tag">About Me</span>
-      <h2 class="section-title">The Person Behind the Code</h2>
-    </div>
-    <div class="about-grid">
-      <div class="about-text reveal">
-        <div class="about-highlight">"Inspired career-minded individual with a combination of skills and strengths for organization performance improvement."</div>
-        <p>Ready to bring knowledge to a good organization and help become part of an enthusiastic team. I blend technical expertise with creative problem-solving to deliver impactful digital solutions.</p>
-        <p>From setting up enterprise networks to designing compelling marketing materials, I thrive at the intersection of technology and creativity.</p>
-        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:24px">
-          <span class="badge" style="background:rgba(0,212,255,0.1);border:1px solid rgba(0,212,255,0.2);color:var(--neon)">📍 Manila, Philippines</span>
-          <span class="badge" style="background:rgba(168,85,247,0.1);border:1px solid rgba(168,85,247,0.2);color:var(--purple)">💼 Open to Work</span>
-          <span class="badge" style="background:rgba(245,158,11,0.1);border:1px solid rgba(245,158,11,0.2);color:#f59e0b">✉️ baldoarman7@gmail.com</span>
+    <section class="work-section page-wrap section-space" id="work" aria-labelledby="work-title">
+      <div class="section-top">
+        <div>
+          <p class="eyebrow"><span class="eyebrow-line"></span> Selected projects / 01—03</p>
+          <h2 class="section-title" id="work-title">A few things<br><span>made with purpose.</span></h2>
+        </div>
+        <label class="work-search">
+          <span class="search-icon" aria-hidden="true">⌕</span>
+          <span class="visually-hidden">Search projects</span>
+          <input id="project-search" type="search" placeholder="Find a project..." autocomplete="off">
+          <span class="search-shortcut" aria-hidden="true">↵</span>
+        </label>
+      </div>
+
+      <div class="work-grid" id="project-list">
+        <article class="work-card" data-search="8a fire safety website corporate html css javascript web development">
+          <a class="work-image work-image-fire" href="https://8agroup.org/" target="_blank" rel="noopener" aria-label="Open the 8A Fire Safety website">
+            <img class="project-preview" src="packages/image/8a-fire-safety-homepage.png" alt="8A Fire Safety website homepage featuring fire protection services" loading="lazy">
+            <span class="art-corner">WEB / 2024</span>
+            <span class="art-open" aria-hidden="true">↗</span>
+          </a>
+          <div class="work-meta"><span>01</span><span>Web development</span></div>
+          <div class="work-title-row">
+            <div><h3>8A Fire Safety Website</h3><p>Corporate website · HTML, CSS, JavaScript</p></div>
+            <a class="arrow-link" href="https://8agroup.org/" target="_blank" rel="noopener" aria-label="Visit the 8A Fire Safety website">↗</a>
+          </div>
+          <p class="work-description">A corporate site for 8A Fire Safety Maintenance &amp; Manufacturing Corp., with a product catalog and service pages.</p>
+        </article>
+
+        <article class="work-card" data-search="id generator system python tkinter database employee automation">
+          <a class="work-image work-image-id" href="https://idgenerator.8agroup.org/index.php" target="_blank" rel="noopener" aria-label="Open the ID Generator System">
+            <img class="project-preview" src="packages/image/id-generator-homepage.png" alt="8A ID Generator employee identification management system homepage" loading="lazy">
+            <span class="art-corner">ID GENERATOR / 2024</span>
+            <span class="art-open" aria-hidden="true">↗</span>
+          </a>
+          <div class="work-meta"><span>02</span><span>Desktop application</span></div>
+          <div class="work-title-row">
+            <div><h3>ID Generator System</h3><p>Employee ID automation · Python, Tkinter</p></div>
+            <a class="arrow-link" href="https://idgenerator.8agroup.org/index.php" target="_blank" rel="noopener" aria-label="Open the ID Generator System">↗</a>
+          </div>
+          <p class="work-description">An employee ID tool with photo integration, custom templates, and batch printing capabilities.</p>
+        </article>
+
+        <article class="work-card" data-search="office supply inventory system php mysql bootstrap stock database">
+          <div class="work-image work-image-inventory" aria-label="Office Supply Inventory dashboard preview">
+            <img class="project-preview inventory-preview" src="packages/image/office-inventory-dashboard.png" alt="Office supply inventory dashboard showing stock analytics and product lists" loading="lazy">
+            <span class="art-corner">INVENTORY / 2024</span>
+            <span class="art-open" aria-hidden="true">↗</span>
+          </div>
+          <div class="work-meta"><span>03</span><span>Web application</span></div>
+          <div class="work-title-row">
+            <div><h3>Office Supply Inventory</h3><p>Inventory management · PHP, MySQL</p></div>
+            <a class="arrow-link" href="https://github.com/payne1092001" target="_blank" rel="noopener" aria-label="View Arman Baldo's GitHub profile">↗</a>
+          </div>
+          <p class="work-description">A stock tracking system for office supplies, with clear stock levels and automated reorder alerts.</p>
+        </article>
+      </div>
+      <p class="empty-search" id="empty-search" hidden>No projects match that search. Try another keyword.</p>
+      <div class="work-footer"><span>Thoughtful solutions, made for real-world needs.</span><a href="https://github.com/payne1092001" target="_blank" rel="noopener">More on GitHub <span aria-hidden="true">↗</span></a></div>
+    </section>
+
+    <section class="about-section section-space" id="about" aria-labelledby="about-title">
+      <div class="page-wrap">
+        <div class="section-top about-top">
+          <div>
+            <p class="eyebrow"><span class="eyebrow-line"></span> A little about me / 02</p>
+            <h2 class="section-title" id="about-title">Curious by nature.<br><span>Practical by design.</span></h2>
+          </div>
+          <p class="about-lead">I’m an IT specialist and web developer who enjoys solving problems from every angle—from the network behind a business to the experience on its website.</p>
+        </div>
+        <div class="about-columns">
+          <div class="about-story">
+            <p>As an IT Administrator, I support the day-to-day technology that helps a business run. I also work on websites and marketing materials, bringing a creative eye to practical technical work.</p>
+            <p>I’m always ready to learn, contribute to a good team, and build digital solutions that make a meaningful difference.</p>
+            <a class="text-link" href="arman_cv.pdf" target="_blank" rel="noopener">More in my résumé <span aria-hidden="true">↗</span></a>
+          </div>
+          <div class="skills-panel">
+            <div class="skills-heading"><span>What I do</span><span>Core skills / 06</span></div>
+            <ul class="skills-list">
+              <li><span>Graphic design</span><span>01</span></li>
+              <li><span>Video editing</span><span>02</span></li>
+              <li><span>Technical support &amp; troubleshooting</span><span>03</span></li>
+              <li><span>Microsoft Office applications</span><span>04</span></li>
+              <li><span>Hardware &amp; software installation</span><span>05</span></li>
+              <li><span>Website development</span><span>06</span></li>
+            </ul>
+          </div>
         </div>
       </div>
-      <div class="reveal">
+    </section>
+
+    <section class="services-section page-wrap section-space" id="services" aria-labelledby="services-title">
+      <div class="section-top">
+        <div>
+          <p class="eyebrow"><span class="eyebrow-line"></span> Website services / 03</p>
+          <h2 class="section-title" id="services-title">Straightforward<br><span>ways to work together.</span></h2>
+        </div>
+        <p class="section-aside">Clear scope, responsive design, and a collaborative process from first draft to launch.</p>
+      </div>
+      <div class="service-grid">
+        <article class="service-card">
+          <p class="service-kicker">01 / Philippines</p>
+          <h3>Landing page</h3>
+          <p class="service-time">Typical delivery: 2–3 weeks</p>
+          <ul><li>One page, up to 6 sections</li><li>Responsive design &amp; scroll details</li><li>Contact form and social links</li><li>Basic SEO and 2 revision rounds</li></ul>
+          <a class="service-link" href="#contact">Discuss this package <span>↗</span></a>
+        </article>
+        <article class="service-card service-card-featured">
+          <p class="service-kicker">02 / Philippines <span class="popular-tag">Most complete</span></p>
+          <h3>Business website</h3>
+          <p class="service-time">Typical delivery: 1–2 months</p>
+          <ul><li>5–8 pages with content editing</li><li>Responsive design &amp; animation</li><li>Contact form and Google Maps</li><li>Basic SEO, analytics &amp; 3 revisions</li></ul>
+          <a class="service-link" href="#contact">Discuss this package <span>↗</span></a>
+        </article>
+        <article class="service-card">
+          <p class="service-kicker">03 / International</p>
+          <h3>Global projects</h3>
+          <p class="service-time">Landing pages to full business sites</p>
+          <ul><li>Landing pages and business websites</li><li>Responsive design, SEO &amp; contact tools</li><li>Same core inclusions as local packages</li></ul>
+          <a class="service-link" href="#contact">Discuss this package <span>↗</span></a>
+        </article>
+      </div>
+      <div class="service-notes">
+        <p><span>GOOD TO KNOW</span> Rush delivery available on request</p>
+        <p><span>PROJECT PROCESS</span> 50% upfront, 50% before launch</p>
+      </div>
+    </section>
+
+    <section class="experience-section section-space" id="experience" aria-labelledby="experience-title">
+      <div class="page-wrap">
+        <div class="section-top">
+          <div>
+            <p class="eyebrow"><span class="eyebrow-line"></span> Career timeline / 04</p>
+            <h2 class="section-title" id="experience-title">Learning through<br><span>hands-on work.</span></h2>
+          </div>
+          <p class="section-aside">Building useful experience across IT operations, hospitality, and web development.</p>
+        </div>
         <div class="timeline">
-          <div class="tl-item">
-            <div class="tl-dot"></div>
-            <div class="tl-year">2024 — Present</div>
-            <div class="tl-role">IT Administrator</div>
-            <div class="tl-company">8A Fire Safety Maintenance &amp; Mfg. Corp.</div>
-          </div>
-          <div class="tl-item">
-            <div class="tl-dot" style="border-color:var(--purple);box-shadow:0 0 12px rgba(168,85,247,0.4)"></div>
-            <div class="tl-year">Mar – Apr 2024</div>
-            <div class="tl-role">IT Intern</div>
-            <div class="tl-company">Century Park Hotel Manila</div>
-          </div>
-          <div class="tl-item">
-            <div class="tl-dot" style="border-color:#f59e0b;box-shadow:0 0 12px rgba(245,158,11,0.4)"></div>
-            <div class="tl-year">Education</div>
-            <div class="tl-role">BS Information Technology</div>
-            <div class="tl-company">Eastern Samar Estate University</div>
-          </div>
+          <article class="timeline-item">
+            <span class="timeline-index">01</span>
+            <div class="timeline-date">September 2024 — Present</div>
+            <div class="timeline-content">
+              <h3>IT Administrator</h3>
+              <p class="timeline-company">8A Fire Safety Maintenance and Manufacturing Corp.</p>
+              <p>Website development and maintenance, marketing design, technical troubleshooting, device maintenance, CCTV and biometric setup, and internet provider documentation.</p>
+            </div>
+          </article>
+          <article class="timeline-item">
+            <span class="timeline-index">02</span>
+            <div class="timeline-date">March — April 2024</div>
+            <div class="timeline-content">
+              <h3>IT Intern</h3>
+              <p class="timeline-company">Century Park Hotel Manila</p>
+              <p>Supported network cable maintenance, desktop setup, technical support, and software installation.</p>
+            </div>
+          </article>
+          <article class="timeline-item">
+            <span class="timeline-index">03</span>
+            <div class="timeline-date">Education</div>
+            <div class="timeline-content">
+              <h3>BS Information Technology</h3>
+              <p class="timeline-company">Eastern Samar Estate University</p>
+              <p>A foundation in information technology, systems, and digital problem-solving.</p>
+            </div>
+          </article>
         </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- SKILLS -->
-<section id="skills">
-  <div style="max-width:1100px;margin:0 auto">
-    <div class="section-header reveal">
-      <span class="section-tag">Skills</span>
-      <h2 class="section-title">What I Bring to the Table</h2>
-      <p class="section-sub">A diverse skill set spanning design, development, and IT infrastructure.</p>
-    </div>
-    <div class="skills-grid">
-      <div class="skill-card" data-pct="85">
-        <div class="skill-icon">🎨</div>
-        <div class="skill-name">Graphic Designer</div>
-        <div class="skill-bar"><div class="skill-fill"></div></div>
-        <div class="skill-pct">85%</div>
+    <section class="contact-section page-wrap section-space" id="contact" aria-labelledby="contact-title">
+      <div class="contact-heading">
+        <p class="eyebrow"><span class="eyebrow-line"></span> Have a project in mind? / 05</p>
+        <h2 class="section-title" id="contact-title">Let’s make<br><span>something useful.</span></h2>
+        <p>Have an opportunity or a project to discuss? Send me a note and let’s start a conversation.</p>
+        <a class="contact-email" href="mailto:baldoarman7@gmail.com">baldoarman7@gmail.com <span aria-hidden="true">↗</span></a>
+        <div class="contact-details"><span>Manila, Philippines</span><a href="tel:+639274684772">+63 927 468 4772</a></div>
       </div>
-      <div class="skill-card" data-pct="80">
-        <div class="skill-icon">💾</div>
-        <div class="skill-name">Backup &amp; Recovery</div>
-        <div class="skill-bar"><div class="skill-fill"></div></div>
-        <div class="skill-pct">80%</div>
-      </div>
-      <div class="skill-card" data-pct="90">
-        <div class="skill-icon">🔧</div>
-        <div class="skill-name">Technical Support &amp; Troubleshooting</div>
-        <div class="skill-bar"><div class="skill-fill"></div></div>
-        <div class="skill-pct">90%</div>
-      </div>
-      <div class="skill-card" data-pct="88">
-        <div class="skill-icon">📊</div>
-        <div class="skill-name">MS Applications (Excel, Word, PPT)</div>
-        <div class="skill-bar"><div class="skill-fill"></div></div>
-        <div class="skill-pct">88%</div>
-      </div>
-      <div class="skill-card" data-pct="82">
-        <div class="skill-icon">🖥️</div>
-        <div class="skill-name">Hardware &amp; Software Installation</div>
-        <div class="skill-bar"><div class="skill-fill"></div></div>
-        <div class="skill-pct">82%</div>
-      </div>
-      <div class="skill-card" data-pct="78">
-        <div class="skill-icon">🌐</div>
-        <div class="skill-name">Website Developer</div>
-        <div class="skill-bar"><div class="skill-fill"></div></div>
-        <div class="skill-pct">78%</div>
-      </div>
-    </div>
-  </div>
-</section>
+      <form class="contact-form" id="contact-form">
+        <div class="form-heading"><span>Send a message</span><span>Usually replies within a few days</span></div>
+        <label for="f-name">Your name</label>
+        <input id="f-name" name="name" type="text" placeholder="Jane Smith" autocomplete="name" required>
+        <label for="f-email">Your email</label>
+        <input id="f-email" name="email" type="email" placeholder="jane@example.com" autocomplete="email" required>
+        <label for="f-subject">Subject</label>
+        <input id="f-subject" name="subject" type="text" placeholder="How can I help?" required>
+        <label for="f-msg">Message</label>
+        <textarea id="f-msg" name="message" placeholder="Tell me a little about what you have in mind..." rows="4" required></textarea>
+        <button class="button button-primary form-submit" type="submit">Open email draft <span aria-hidden="true">↗</span></button>
+        <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
 
-<!-- PROJECTS -->
-<section id="projects">
-  <div style="max-width:1100px;margin:0 auto">
-    <div class="section-header reveal">
-      <span class="section-tag">Projects</span>
-      <h2 class="section-title">Featured Work</h2>
-      <p class="section-sub">Real-world solutions built with purpose and precision.</p>
-    </div>
-    <div class="projects-scroll">
-      <div class="proj-card">
-        <div class="proj-thumb">🔥</div>
-        <div class="proj-body">
-          <div class="proj-tech">
-            <span class="tech-tag">HTML</span>
-            <span class="tech-tag">CSS</span>
-            <span class="tech-tag">JavaScript</span>
-          </div>
-          <div class="proj-title">8A Fire Safety Website</div>
-          <div class="proj-desc">Corporate website for 8A Fire Safety Maintenance &amp; Manufacturing Corp. with product catalog and service pages.</div>
-          <div class="proj-links">
-            <button class="proj-btn primary" onclick="window.open('https://payne1092001.github.io/portfolio/','_blank')">Live Preview ↗</button>
-            <button class="proj-btn" onclick="window.open('https://github.com/payne1092001','_blank')">GitHub</button>
-          </div>
-        </div>
-      </div>
-      <div class="proj-card">
-        <div class="proj-thumb" style="background:linear-gradient(135deg,rgba(168,85,247,0.15),rgba(0,212,255,0.1))">🪪</div>
-        <div class="proj-body">
-          <div class="proj-tech">
-            <span class="tech-tag">Python</span>
-            <span class="tech-tag">Tkinter</span>
-            <span class="tech-tag">Database</span>
-          </div>
-          <div class="proj-title">ID Generator System</div>
-          <div class="proj-desc">Automated employee ID generation system with photo integration, template design, and batch printing capabilities.</div>
-          <div class="proj-links">
-            <button class="proj-btn primary">Live Preview</button>
-            <button class="proj-btn" onclick="window.open('https://github.com/payne1092001','_blank')">GitHub</button>
-          </div>
-        </div>
-      </div>
-      <div class="proj-card">
-        <div class="proj-thumb" style="background:linear-gradient(135deg,rgba(245,158,11,0.1),rgba(168,85,247,0.1))">📦</div>
-        <div class="proj-body">
-          <div class="proj-tech">
-            <span class="tech-tag">PHP</span>
-            <span class="tech-tag">MySQL</span>
-            <span class="tech-tag">Bootstrap</span>
-          </div>
-          <div class="proj-title">Office Supply Inventory System</div>
-          <div class="proj-desc">Full-stack inventory management system for tracking office supplies, stock levels, and automated reorder alerts.</div>
-          <div class="proj-links">
-            <button class="proj-btn primary">Live Preview</button>
-            <button class="proj-btn" onclick="window.open('https://github.com/payne1092001','_blank')">GitHub</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PRICING -->
-<section id="pricing">
-  <div class="pricing-container">
-    <div class="section-header reveal">
-      <span class="section-tag">Pricing</span>
-      <h2 class="section-title">Choose the Right Package</h2>
-      <p class="section-sub">Clear, flexible website packages for businesses in the Philippines and worldwide.</p>
-    </div>
-    <div class="pricing-grid">
-      <article class="pricing-card reveal">
-        <div class="pricing-card-top">
-          <span class="pricing-region">Local · Philippines</span>
-          <span class="pricing-currency">PHP</span>
-        </div>
-        <h3>Landing Page</h3>
-        <div class="pricing-price">₱10,000 <span>to</span> ₱25,000</div>
-        <p class="pricing-delivery">Delivered in 2 to 3 weeks</p>
-        <ul class="pricing-features">
-          <li>One page with up to about 6 sections</li>
-          <li>Mobile responsive design</li>
-          <li>Scroll animations</li>
-          <li>Contact form and social media links</li>
-          <li>Basic SEO setup</li>
-          <li>2 rounds of revisions</li>
-        </ul>
-        <button class="pricing-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Start a Project</button>
-      </article>
-      <article class="pricing-card pricing-card-featured reveal">
-        <div class="pricing-popular">Most Complete</div>
-        <div class="pricing-card-top">
-          <span class="pricing-region">Local · Philippines</span>
-          <span class="pricing-currency">PHP</span>
-        </div>
-        <h3>Business Website</h3>
-        <div class="pricing-price">₱30,000 <span>to</span> ₱70,000</div>
-        <p class="pricing-delivery">Delivered in 1 to 2 months</p>
-        <ul class="pricing-features">
-          <li>5 to 8 pages</li>
-          <li>CMS for editing your own content</li>
-          <li>Mobile responsive design with animations</li>
-          <li>Contact form and Google Maps</li>
-          <li>Basic SEO and Google Analytics setup</li>
-          <li>3 rounds of revisions</li>
-        </ul>
-        <button class="pricing-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Start a Project</button>
-      </article>
-      <article class="pricing-card pricing-card-international reveal">
-        <div class="pricing-card-top">
-          <span class="pricing-region">International</span>
-          <span class="pricing-currency">USD</span>
-        </div>
-        <h3>International Packages</h3>
-        <div class="international-price">
-          <div><strong>$500</strong> <span>to</span> <strong>$1,200</strong><small>Landing page</small></div>
-          <div><strong>$1,500</strong> <span>to</span> <strong>$3,500</strong><small>Business website</small></div>
-        </div>
-        <p class="pricing-delivery">Landing page: 2 to 3 weeks · Business website: 1 to 2 months</p>
-        <ul class="pricing-features">
-          <li>Same inclusions as the local packages</li>
-          <li>Responsive design and animations</li>
-          <li>SEO setup and contact functionality</li>
-        </ul>
-        <button class="pricing-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Start a Project</button>
-      </article>
-    </div>
-    <div class="pricing-details reveal">
-      <div class="pricing-detail">
-        <span class="pricing-detail-icon">＋</span>
-        <div>
-          <h3>Add-ons</h3>
-          <p><strong>Local:</strong> Extra page ₱3,000–₱5,000 · Domain and hosting ₱1,500–₱2,500 · Maintenance ₱2,000–₱5,000/month</p>
-          <p><strong>International:</strong> Extra page $100–$200 · Domain and hosting $50 · Maintenance $50–$150/month</p>
-        </div>
-      </div>
-      <div class="pricing-detail">
-        <span class="pricing-detail-icon">⚡</span>
-        <div>
-          <h3>Rush delivery</h3>
-          <p>Add 25% to the selected package for an accelerated timeline.</p>
-        </div>
-      </div>
-      <div class="pricing-detail pricing-payment">
-        <span class="pricing-detail-icon">◐</span>
-        <div>
-          <h3>Payment terms</h3>
-          <p><strong>50% upfront</strong> and <strong>50% before launch.</strong></p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- EXPERIENCE -->
-<section id="experience">
-  <div class="exp-container">
-    <div class="section-header reveal">
-      <span class="section-tag">Experience</span>
-      <h2 class="section-title">Career Journey</h2>
-    </div>
-    <div class="exp-item">
-      <div class="exp-line"></div>
-      <div class="exp-dot"></div>
-      <div class="exp-card">
-        <div class="exp-period">September 2024 — Present</div>
-        <div class="exp-title">IT Administrator</div>
-        <div class="exp-company">8A Fire Safety Maintenance and Manufacturing Corp.</div>
-        <ul class="exp-duties">
-          <li>Website development and maintenance</li>
-          <li>Marketing materials design</li>
-          <li>Technical troubleshooting</li>
-          <li>Device installation and maintenance</li>
-          <li>CCTV and biometric setup</li>
-          <li>Fire extinguisher design IDs</li>
-          <li>Internet provider documentation</li>
-        </ul>
-      </div>
-    </div>
-    <div class="exp-item">
-      <div class="exp-dot" style="border-color:var(--purple);box-shadow:0 0 20px rgba(168,85,247,0.4);background:var(--dark3)"></div>
-      <div class="exp-card">
-        <div class="exp-period">March – April 2024</div>
-        <div class="exp-title">IT Intern</div>
-        <div class="exp-company">Century Park Hotel Manila</div>
-        <ul class="exp-duties">
-          <li>Network cable maintenance</li>
-          <li>Technical support</li>
-          <li>Desktop setup</li>
-          <li>Software installation</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact">
-  <div class="contact-inner">
-    <div class="section-header reveal">
-      <span class="section-tag">Contact</span>
-      <h2 class="section-title">Let's Build Something</h2>
-      <p class="section-sub">Have a project in mind? Let's discuss how we can work together.</p>
-    </div>
-    <div class="contact-form reveal">
-      <div class="form-row">
-        <div class="form-group">
-          <label>Your Name</label>
-          <input type="text" id="f-name" placeholder="John Doe">
-        </div>
-        <div class="form-group">
-          <label>Your Email</label>
-          <input type="email" id="f-email" placeholder="john@example.com">
-        </div>
-      </div>
-      <div class="form-group">
-        <label>Subject</label>
-        <input type="text" id="f-subject" placeholder="Let's work together">
-      </div>
-      <div class="form-group">
-        <label>Message</label>
-        <textarea id="f-msg" placeholder="Tell me about your project..."></textarea>
-      </div>
-      <button class="form-submit" onclick="sendMsg()">Send Message ✦</button>
-      <div id="form-status" style="text-align:center;margin-top:16px;font-size:13px;color:var(--neon);opacity:0;transition:opacity .3s"></div>
-    </div>
-    <div class="contact-info reveal">
-      <div class="info-card">
-        <div class="info-icon">📧</div>
-        <div class="info-label">Email</div>
-        <div class="info-val">baldoarman7@gmail.com</div>
-      </div>
-      <div class="info-card" style="cursor:pointer" onclick="window.location.href='tel:+639274684772'">
-          <div class="info-icon">📞</div>
-          <div class="info-label">Contact Number</div>
-          <div class="info-val" style="color:var(--neon)">+63 927 468 4772</div>
-      </div>
-      <div class="info-card">
-        <div class="info-icon">📍</div>
-        <div class="info-label">Location</div>
-        <div class="info-val">Manila, Philippines</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <span class="footer-logo">ARMAN BALDO</span>
-  <ul class="footer-links">
-    <li><a href="#about">About</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#pricing">Pricing</a></li>
-    <li><a href="#experience">Experience</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-  <p class="footer-copy">Designed &amp; Developed by Arman Baldo · Manila, Philippines</p>
-</footer>
-
-<!-- Fixed UI -->
-<a class="ai-bubble" href="mailto:baldoarman7@gmail.com">
-  <div class="ai-dot"></div>
-  Get In Touch
-</a>
-
-<script src="packages/js/main.js"></script>
-
+  <footer class="site-footer">
+    <a class="wordmark" href="#home">ARMAN<span>®</span></a>
+    <p>Designed and built by Arman Baldo <span>·</span> Manila, Philippines</p>
+    <a class="back-top" href="#home">Back to top <span aria-hidden="true">↑</span></a>
+  </footer>
+  <script src="packages/js/main.js"></script>
 </body>
 </html>
